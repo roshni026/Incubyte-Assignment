@@ -1,5 +1,5 @@
 class Spaceship:
-    def __init__(self, x = 0, y = 0, z = 0, direction = 'N'):
+    def __init__(self, x=0, y=0, z=0, direction='N'):
         self.x = x
         self.y = y
         self.z = z
@@ -10,7 +10,7 @@ class Spaceship:
             self.y += 1
         elif self.direction == 'S':
             self.y -= 1
-        elif self.direction == 'E': 
+        elif self.direction == 'E':
             self.x += 1
         elif self.direction == 'W':
             self.x -= 1
