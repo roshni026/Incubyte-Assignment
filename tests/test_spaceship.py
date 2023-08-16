@@ -1,7 +1,6 @@
 import unittest
 from src.spaceship import Spaceship
 
-
 class TestSpaceship(unittest.TestCase):
     def test_move_forward(self):
         spacecraft = Spaceship()
@@ -35,16 +34,16 @@ class TestSpaceship(unittest.TestCase):
 
     def test_e2e_scenario(self):
         spacecraft = Spaceship()
-        commands = "frbldu"
+        commands = ["f", "r", "u", "b", "l"]
         for command in commands:
             spacecraft.execute_command(command)
         self.assertEqual(spacecraft.get_position(), (0, 1, -1))
-        self.assertEqual(spacecraft.get_direction(), "N")
+        self.assertEqual(spacecraft.get_direction(), "Up")
 
     def test_invalid_command(self):
         spacecraft = Spaceship()
         with self.assertRaises(ValueError):
-            spacecraft.execute_command("x")  
+            spacecraft.execute_command("x")
 
 if __name__ == '__main__':
     unittest.main()
